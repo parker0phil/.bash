@@ -1,4 +1,3 @@
-
 install git
 ```
 #UBUNTU
@@ -7,7 +6,7 @@ apt-get install git
 ```
 #OSX
 
-``
+```
 
 install this bash
 ```
