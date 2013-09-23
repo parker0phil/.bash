@@ -1,0 +1,6 @@
+#!/usr/bin/env groovy
+tapFile = new File(args[0])
+System.in.eachLine{
+  tapFile << "${it}\n"
+  println it
+}
