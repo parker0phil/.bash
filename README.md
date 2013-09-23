@@ -1,11 +1,11 @@
 install git
 ```
 #UBUNTU
-apt-get install git
+sudo apt-get install git-core
 ```
 ```
 #OSX
-
+sudo brew install git --HEAD
 ```
 
 install this bash
