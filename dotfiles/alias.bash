@@ -34,9 +34,21 @@ function getjava(){
   esac
   VERSION="7u17-"
   BUILD="b02"
-  LINK="http://download.oracle.com/otn-pub/java/jdk/${VERSION}${BUILD}/jre-${VERSION}${PLATFORM}.tar.gz"
+  FILE="jre-${VERSION}${PLATFORM}.tar.gz"
+  LINK="http://download.oracle.com/otn-pub/java/jdk/${VERSION}${BUILD}/${FILE}"
+
+  mkdir -p "${HOME}/.tools"
+  cd "${HOME}/.tools"
+
+
   echo "Downloading: $LINK"
   curl -b gpw_e24=http%3A%2F%2Fwww.oracle.com -O -L $LINK
+  BINFOLDER=`tar -ztf ${FILE}| head -n1 | cut -d "/" -f 1`
+  tar -zxvf "${FILE}"
+  rm java
+  ln -s ${BINFOLDER} java
+  rm ${FILE}
+  echo "remember to resource"
 }
 
 

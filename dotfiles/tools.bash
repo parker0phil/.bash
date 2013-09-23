@@ -1,6 +1,6 @@
 export PATH=${HOME}/.bash/scripts:$PATH
 
-for BINTOOL in `ls ${HOME}/.tools`
+for BINTOOL in `ls ${HOME}/.tools | grep -v "."`
 do
    TOOL_LINK=`echo $BINTOOL| tr '[:upper:]' '[:lower:]'`
    TOOL_ALIAS=`echo $BINTOOL| tr '[:lower:]' '[:upper:]'`
