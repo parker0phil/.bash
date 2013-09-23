@@ -19,3 +19,25 @@ alias gci="gradle cleanIdea idea"
 function odl() { ssh "$@" 'telnet 172.31.211.4 259';}
 
 
+#Downloads
+function getjava(){
+  case "$OSTYPE" in
+    linux*)
+        PLATFORM="linux-x64"
+    ;;
+    darwin*)
+        PLATFORM=""
+    ;;
+    *)
+        echo "Unsupported OS: $OSTYPE"
+    ;;
+  esac
+  VERSION="7u17-"
+  BUILD="b02"
+  LINK="http://download.oracle.com/otn-pub/java/jdk/${VERSION}${BUILD}/jre-${VERSION}${PLATFORM}.tar.gz"
+  echo "Downloading: $LINK"
+  curl -b gpw_e24=http%3A%2F%2Fwww.oracle.com -O -L $LINK
+}
+
+
+
